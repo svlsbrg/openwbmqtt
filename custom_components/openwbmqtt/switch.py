@@ -141,4 +141,4 @@ class openwbSwitch(OpenWBBaseEntity, SwitchEntity):
     def publishToMQTT(self):
         """Publish data to MQTT."""
         topic = f"{self.entity_description.mqttTopicCommand}"
-        self.hass.components.mqtt.publish(self.hass, topic, str(int(self._attr_is_on)))
+        mqtt.publish(self.hass, topic, str(int(self._attr_is_on)))

@@ -167,4 +167,4 @@ class openWBNumber(OpenWBBaseEntity, NumberEntity):
         _LOGGER.debug("MQTT topic: %s", topic)
         payload = str(int(self._attr_native_value))
         _LOGGER.debug("MQTT payload: %s", payload)
-        self.hass.components.mqtt.publish(self.hass, topic, payload)
+        mqtt.publish(self.hass, topic, payload)
